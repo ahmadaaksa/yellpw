@@ -1,0 +1,65 @@
+/* Gaya Pendahuluan */
+.introduction {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.introduction h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f9f9f9;
+
+}
+
+/* Fitur Utama */
+.features {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.features h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.features li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Testimoni */
+.testimonials {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.testimonials h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #f9f9f9;
+    border-left: 4px solid #007BFF;
+}
+
+.testimonial blockquote {
+    font-size: 16px;
+    font-style: italic;
+    color: #555;
+}

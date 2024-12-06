@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Interaktif - Pendaftaran & Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Selamat Datang di Yellppw</h1>
+    </header>
+
+    <!-- Main Frame -->
+    <div class="frame">
+        <!-- Kontainer untuk Daftar dan Login -->
+        <div class="auth-links">
+            <a class="button-link" href="register.php">Daftar Akun Baru</a><br><br>
+            <a class="button-link" href="login.php">Login</a>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleMode()">Ganti Mode</button>
+    </div>
+
+    <script>
+        // Function to toggle light/dark mode
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

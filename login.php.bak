@@ -1,0 +1,68 @@
+<?php
+include 'db.php';
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $sql = "SELECT * FROM users WHERE username='$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            header("Location: profile.php");
+        } else {
+            echo "Password salah!<br><a href='login.php'>Coba lagi</a>";
+        }
+    } else {
+        echo "Username tidak ditemukan!<br><a href='login.php'>Coba lagi</a>";
+    }
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Login Pengguna</h1>
+        <form action="login.php" method="POST" onsubmit="showLoading()">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <div id="loading"></div>
+        
+        <a href="index.php">Kembali ke Menu Utama</a>
+    </div>
+
+    <button onclick="toggleMode()">Ganti Mode</button>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
+

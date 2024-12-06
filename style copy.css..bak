@@ -1,0 +1,113 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body pengaturan umum */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Membuat elemen fleksibel mengisi ruang */
+    padding: 0 2vw; /* Menambahkan padding responsif */
+}
+
+.item {
+    flex: 1; /* Membuat setiap elemen mengisi ruang yang tersisa */
+    margin: 0 10px; /* Spasi kecil antar elemen */
+}
+
+
+/* Header styling */
+.header {
+    text-align: center;
+    background-color: var(--header-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: var(--header-text);
+}
+
+/* Frame/bingkai */
+.frame {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--container-bg);
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Container untuk tautan daftar dan login */
+.auth-links {
+    padding: 20px;
+    border: 2px solid var(--button-bg); /* Bingkai di sekitar tautan */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Tombol/Link */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: var(--button-bg-hover);
+}
+
+/* Tombol mode gelap/terang */
+.toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: var(--button-bg-hover);
+}
+
+/* Pengaturan Mode Terang */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --header-bg: #aa00ff;
+    --header-text: #fff;
+    --container-bg: #fff;
+    --button-bg: #BB86FC;
+    --button-bg-hover: #BB86FC;
+    --button-text: #fff;
+}
+
+/* Pengaturan Mode Malam */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #1f1f1f;
+    --header-text: #BB86FC;
+    --container-bg: #1f1f1f;
+    --button-bg: #BB86FC;
+    --button-bg-hover: #3700B3;
+    --button-text: #121212;
+}

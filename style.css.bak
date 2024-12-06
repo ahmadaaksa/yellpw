@@ -1,0 +1,93 @@
+/* Reset dasar untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pengaturan umum */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--container-bg);
+    text-align: center;
+}
+
+/* Tombol */
+button, input[type="submit"] {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--button-bg-hover);
+}
+
+/* Input */
+input[type="text"], input[type="password"], input[type="date"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+}
+
+/* Animasi loading */
+#loading {
+    display: none;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid var(--button-bg);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Pengaturan Mode Terang */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #fff;
+    --button-bg: #007BFF;
+    --button-bg-hover: #0056b3;
+    --button-text: #fff;
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --input-text: #333;
+}
+
+/* Pengaturan Mode Malam */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --container-bg: #1f1f1f;
+    --button-bg: #BB86FC;
+    --button-bg-hover: #3700B3;
+    --button-text: #121212;
+    --input-bg: #333;
+    --input-border: #555;
+    --input-text: #e0e0e0;
+}
